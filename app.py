@@ -75,14 +75,13 @@ with tab2:
     col_a, col_b = st.columns(2)
     with col_a:
         st.markdown("- **Educação e Metodologias Ativas**")
-         experiential_text = "Desenvolvimento de ferramentas gamificadas e plataformas de ensino."
+        experiential_text = "Desenvolvimento de ferramentas gamificadas e plataformas de ensino."
         st.write(experiential_text)
     with col_b:
         st.markdown("- **Pesquisa e Tecnologia**")
         st.write(
             "Análise de dados, automação em Python e soluções web eficientes."
         )
-
 with tab3:
     st.markdown("### Linha do Tempo / Notícias")
     st.write("- **Setembro/2026:** Lançamento da nova arquitetura do portal.")
