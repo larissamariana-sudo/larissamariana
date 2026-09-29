@@ -14,19 +14,21 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
-# Inserindo a identidade visual refinada (Cores, Fontes e Estilos)
+# Estilização visual forçada para o fundo e abas
 st.markdown(
     """
     <style>
-    .stApp {
-        background: #f7f7f5; 
-        color: #182746;
-        font-family: Inter, Arial, sans-serif;
+    /* Força o fundo da aplicação inteira */
+    .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+        background-color: #f7f7f5 !important;
+        color: #182746 !important;
     }
+    
     h1, h2, h3 {
-        color: #182746;
+        color: #182746 !important;
         font-family: Georgia, serif;
     }
+    
     .titulo {
         font-size: 2.8rem; 
         font-weight: 700; 
@@ -34,24 +36,32 @@ st.markdown(
         font-family: Georgia, serif;
         color: #182746;
     }
+    
     .subtitulo {
         font-size: 1.15rem; 
         color: #536073;
         font-family: Inter, Arial, sans-serif;
     }
-    /* Estilização personalizada para as abas */
+
+    /* Estilização moderna das abas (Tabs) */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
+        background-color: transparent;
     }
+    
     .stTabs [data-baseweb="tab"] {
-        background-color: #ffffff;
-        border-radius: 6px 6px 0px 0px;
+        background-color: #ffffff !important;
+        border: 1px solid #e1e3e6 !important;
+        border-radius: 6px 6px 0px 0px !important;
         font-weight: 600;
-        color: #182746;
+        color: #182746 !important;
+        padding: 10px 20px;
     }
+
     .stTabs [aria-selected="true"] {
         background-color: #182746 !important;
         color: #ffffff !important;
+        border-color: #182746 !important;
     }
     </style>
     """,
