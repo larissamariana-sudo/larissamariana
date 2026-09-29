@@ -14,33 +14,62 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
-# Estilização visual forçada para o fundo e abas
+# Estilização profissional incorporando o design system da LAMAVEO
 st.markdown(
     """
     <style>
-    /* Força o fundo da aplicação inteira */
-    .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    /* Configuração de fundo global e tipografia */
+    .stApp {
         background-color: #f7f7f5 !important;
         color: #182746 !important;
+        font-family: Inter, Arial, sans-serif !important;
     }
     
-    h1, h2, h3 {
-        color: #182746 !important;
+    /* Cabeçalho estilo Barra LAMAVEO no topo */
+    .lamaveo-header {
+        background-color: #182746;
+        color: white;
+        padding: 16px 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .lamaveo-brand {
         font-family: Georgia, serif;
+        font-weight: bold;
+        font-size: 24px;
+        letter-spacing: 0.12em;
+        color: white;
+        text-decoration: none;
+    }
+    .lamaveo-tag {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #f5aa89;
+        font-weight: 700;
+    }
+
+    /* Títulos e Tipografia com Georgia */
+    h1, h2, h3, .titulo {
+        color: #182746 !important;
+        font-family: Georgia, serif !important;
     }
     
     .titulo {
         font-size: 2.8rem; 
         font-weight: 700; 
         line-height: 1.15;
-        font-family: Georgia, serif;
-        color: #182746;
     }
     
     .subtitulo {
         font-size: 1.15rem; 
         color: #536073;
         font-family: Inter, Arial, sans-serif;
+        margin-bottom: 20px;
     }
 
     /* Estilização moderna das abas (Tabs) */
@@ -51,7 +80,7 @@ st.markdown(
     
     .stTabs [data-baseweb="tab"] {
         background-color: #ffffff !important;
-        border: 1px solid #e1e3e6 !important;
+        border: 1px solid #cbd0d6 !important;
         border-radius: 6px 6px 0px 0px !important;
         font-weight: 600;
         color: #182746 !important;
@@ -63,7 +92,25 @@ st.markdown(
         color: #ffffff !important;
         border-color: #182746 !important;
     }
+
+    /* Botões interativos com o tom coral LAMAVEO */
+    .stButton button, .stLinkButton a {
+        background-color: #182746 !important;
+        color: #ffffff !important;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+    .stButton button:hover, .stLinkButton a:hover {
+        background-color: #f39472 !important;
+        color: #182746 !important;
+    }
     </style>
+    
+    <!-- Barra de Navegação Superior da Marca -->
+    <div class="lamaveo-header">
+        <span class="lamaveo-brand">LAMAVEO & ACADÊMICO</span>
+        <span class="lamaveo-tag">Plataforma Profissional & Editora</span>
+    </div>
     """,
     unsafe_allow_html=True,
 )
@@ -119,18 +166,19 @@ def mostrar_cards(dados, mensagem_vazia, mostrar_link=True):
 
 dados = carregar_conteudo()
 
+# Bloco Principal do Perfil
 st.markdown(
     '<div class="titulo">Larissa Mariana Veloso de Oliveira</div>',
     unsafe_allow_html=True,
 )
 st.markdown(
-    '<p class="subtitulo">Fisioterapeuta • Docente • '
-    'Coordenadora do curso de Fisioterapia da PUC Goiás</p>',
+    '<p class="subtitulo">Fisioterapeuta • Docente • Coordenadora do curso de Fisioterapia da PUC Goiás</p>',
     unsafe_allow_html=True,
 )
 
 st.divider()
 
+# Abas de Navegação
 sobre, servicos, projetos, cursos, publicacoes = st.tabs(
     [
         "Sobre",
@@ -219,4 +267,4 @@ with publicacoes:
     )
 
 st.divider()
-st.caption("© 2026 Larissa Mariana Veloso de Oliveira • Fisioterapia")
+st.caption("© 2026 Larissa Mariana Veloso de Oliveira • LAMAVEO Acadêmico")
