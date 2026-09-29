@@ -14,13 +14,45 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
+# Inserindo a identidade visual refinada (Cores, Fontes e Estilos)
 st.markdown(
     """
     <style>
-    .stApp {background: #f5f8fa; color: #173348;}
-    h1, h2, h3 {color: #123a4b;}
-    .titulo {font-size: 3rem; font-weight: 750; line-height: 1.15;}
-    .subtitulo {font-size: 1.15rem; color: #526875;}
+    .stApp {
+        background: #f7f7f5; 
+        color: #182746;
+        font-family: Inter, Arial, sans-serif;
+    }
+    h1, h2, h3 {
+        color: #182746;
+        font-family: Georgia, serif;
+    }
+    .titulo {
+        font-size: 2.8rem; 
+        font-weight: 700; 
+        line-height: 1.15;
+        font-family: Georgia, serif;
+        color: #182746;
+    }
+    .subtitulo {
+        font-size: 1.15rem; 
+        color: #536073;
+        font-family: Inter, Arial, sans-serif;
+    }
+    /* Estilização personalizada para as abas */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 8px;
+    }
+    .stTabs [data-baseweb="tab"] {
+        background-color: #ffffff;
+        border-radius: 6px 6px 0px 0px;
+        font-weight: 600;
+        color: #182746;
+    }
+    .stTabs [aria-selected="true"] {
+        background-color: #182746 !important;
+        color: #ffffff !important;
+    }
     </style>
     """,
     unsafe_allow_html=True,
