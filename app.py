@@ -14,48 +14,20 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
-# Estilização profissional incorporando o design system da LAMAVEO
+# Estilização profissional com fundo azul (#182746) e identidade visual LAMAVEO
 st.markdown(
     """
     <style>
-    /* Configuração de fundo global e tipografia */
-    .stApp {
-        background-color: #f7f7f5 !important;
-        color: #182746 !important;
+    /* Força o fundo azul escuro em toda a aplicação */
+    .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+        background-color: #182746 !important;
+        color: #e0e6ee !important;
         font-family: Inter, Arial, sans-serif !important;
     }
     
-    /* Cabeçalho estilo Barra LAMAVEO no topo */
-    .lamaveo-header {
-        background-color: #182746;
-        color: white;
-        padding: 16px 28px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 8px;
-        margin-bottom: 30px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .lamaveo-brand {
-        font-family: Georgia, serif;
-        font-weight: bold;
-        font-size: 24px;
-        letter-spacing: 0.12em;
-        color: white;
-        text-decoration: none;
-    }
-    .lamaveo-tag {
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        color: #f5aa89;
-        font-weight: 700;
-    }
-
-    /* Títulos e Tipografia com Georgia */
-    h1, h2, h3, .titulo {
-        color: #182746 !important;
+    /* Títulos em branco com fonte Georgia */
+    h1, h2, h3 {
+        color: #ffffff !important;
         font-family: Georgia, serif !important;
     }
     
@@ -63,54 +35,64 @@ st.markdown(
         font-size: 2.8rem; 
         font-weight: 700; 
         line-height: 1.15;
+        font-family: Georgia, serif;
+        color: #ffffff;
     }
     
     .subtitulo {
         font-size: 1.15rem; 
-        color: #536073;
+        color: #f5aa89 !important; /* Tom coral de destaque */
         font-family: Inter, Arial, sans-serif;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
 
-    /* Estilização moderna das abas (Tabs) */
+    /* Estilização moderna das abas (Tabs) para o fundo azul */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
         background-color: transparent;
+        border-bottom: 2px solid #30476b;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background-color: #ffffff !important;
-        border: 1px solid #cbd0d6 !important;
+        background-color: #24395e !important;
+        border: 1px solid #30476b !important;
         border-radius: 6px 6px 0px 0px !important;
         font-weight: 600;
-        color: #182746 !important;
+        color: #d2d9e3 !important;
         padding: 10px 20px;
     }
 
     .stTabs [aria-selected="true"] {
-        background-color: #182746 !important;
-        color: #ffffff !important;
-        border-color: #182746 !important;
+        background-color: #f39472 !important;
+        color: #182746 !important;
+        border-color: #f39472 !important;
+        font-weight: bold;
     }
 
-    /* Botões interativos com o tom coral LAMAVEO */
-    .stButton button, .stLinkButton a {
-        background-color: #182746 !important;
+    /* Containers e Cards com contraste elegante para fundo azul */
+    div[data-testid="stVerticalBlock"] div[data-testid="stContainer"] {
+        background-color: #24395e !important;
+        border: 1px solid #30476b !important;
         color: #ffffff !important;
-        border-radius: 6px;
-        font-weight: 600;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    .stButton button:hover, .stLinkButton a:hover {
+
+    /* Botões personalizados com o tom coral LAMAVEO */
+    .stButton button, .stLinkButton a {
         background-color: #f39472 !important;
+        color: #182746 !important;
+        border-radius: 6px;
+        font-weight: 700;
+        border: none;
+    }
+    
+    .stButton button:hover, .stLinkButton a:hover {
+        background-color: #ffffff !important;
         color: #182746 !important;
     }
     </style>
-    
-    <!-- Barra de Navegação Superior da Marca -->
-    <div class="lamaveo-header">
-        <span class="lamaveo-brand">LAMAVEO & ACADÊMICO</span>
-        <span class="lamaveo-tag">Plataforma Profissional & Editora</span>
-    </div>
     """,
     unsafe_allow_html=True,
 )
@@ -166,7 +148,7 @@ def mostrar_cards(dados, mensagem_vazia, mostrar_link=True):
 
 dados = carregar_conteudo()
 
-# Bloco Principal do Perfil
+# Cabeçalho Principal
 st.markdown(
     '<div class="titulo">Larissa Mariana Veloso de Oliveira</div>',
     unsafe_allow_html=True,
@@ -178,7 +160,7 @@ st.markdown(
 
 st.divider()
 
-# Abas de Navegação
+# Abas de navegação
 sobre, servicos, projetos, cursos, publicacoes = st.tabs(
     [
         "Sobre",
@@ -267,4 +249,4 @@ with publicacoes:
     )
 
 st.divider()
-st.caption("© 2026 Larissa Mariana Veloso de Oliveira • LAMAVEO Acadêmico")
+st.caption("© 2026 Larissa Mariana Veloso de Oliveira • Fisioterapia")
