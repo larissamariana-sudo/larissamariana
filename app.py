@@ -14,7 +14,7 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
-# Estilização profissional com fundo azul (#182746) e identidade visual LAMAVEO
+# Estilização profissional com fundo azul (#182746) e abas/textos ajustados
 st.markdown(
     """
     <style>
@@ -41,12 +41,12 @@ st.markdown(
     
     .subtitulo {
         font-size: 1.15rem; 
-        color: #f5aa89 !important; /* Tom coral de destaque */
+        color: #f5aa89 !important;
         font-family: Inter, Arial, sans-serif;
         margin-bottom: 25px;
     }
 
-    /* Estilização moderna das abas (Tabs) para o fundo azul */
+    /* Estilização moderna das abas (Tabs) com texto em negrito e branco */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
         background-color: transparent;
@@ -57,16 +57,28 @@ st.markdown(
         background-color: #24395e !important;
         border: 1px solid #30476b !important;
         border-radius: 6px 6px 0px 0px !important;
-        font-weight: 600;
-        color: #d2d9e3 !important;
         padding: 10px 20px;
     }
 
+    /* Força o texto de todas as abas em negrito e branco */
+    .stTabs [data-baseweb="tab"] p, 
+    .stTabs [data-baseweb="tab"] span, 
+    .stTabs [data-baseweb="tab"] div {
+        color: #ffffff !important;
+        font-weight: bold !important;
+        font-family: Inter, Arial, sans-serif !important;
+    }
+
+    /* Aba selecionada com destaque coral LAMAVEO */
     .stTabs [aria-selected="true"] {
         background-color: #f39472 !important;
-        color: #182746 !important;
         border-color: #f39472 !important;
-        font-weight: bold;
+    }
+
+    .stTabs [aria-selected="true"] p, 
+    .stTabs [aria-selected="true"] span, 
+    .stTabs [aria-selected="true"] div {
+        color: #182746 !important;
     }
 
     /* Containers e Cards com contraste elegante para fundo azul */
