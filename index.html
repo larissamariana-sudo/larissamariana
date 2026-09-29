@@ -1,14 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://SEU-PROJETO.streamlit.app/">
-    <title>Prof. Dr(a). Larissa Mariana | Fisioterapia & Docência</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAMAVEO | Editora e livraria</title>
+  <meta name="description" content="Livros e histórias da Editora LAMAVEO">
+  <link rel="icon" href="lamaveo-marca-l.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <p>Redirecionando para o site oficial...</p>
-    <script>
-        window.location.href = "https://https://larissamariana.streamlit.app/";
-    </script>
+  <header>
+    <div class="topo">
+      <a class="marca" href="#inicio">
+        <img src="lamaveo-marca-l.svg" alt="" width="42" height="42">
+        LAMAVEO
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#como-receber">Como receber</a>
+      </nav>
+
+      <a class="conta"
+         href="https://lamaveo.laragyncity.chatgpt.site/minha-conta">
+        Minha conta
+      </a>
+    </div>
+  </header>
+
+  <section class="abertura" id="inicio">
+    <div>
+      <span class="destaque">Editora e livraria</span>
+      <h1>Histórias e conhecimento para seguir adiante.</h1>
+      <p>Histórias infantis, aventuras juvenis e literatura para descobrir, compartilhar e guardar.</p>
+      <a class="botao-claro" href="#catalogo">Explorar o catálogo</a>
+    </div>
+
+    <div class="arte-editorial" aria-hidden="true">
+      <div class="livro">Literatura</div>
+      <div class="livro">Ciência &amp; saúde</div>
+      <div class="livro">Educação</div>
+    </div>
+  </section>
+
+  <main>
+    <section id="catalogo">
+      <div class="cabecalho-secao">
+        <div>
+          <h2>Livros da LAMAVEO</h2>
+          <p>Conheça as obras de Lara Veloso.</p>
+        </div>
+
+        <label>
+          <span class="somente-leitor">Buscar livro</span>
+          <input id="busca" type="search" placeholder="Buscar título ou assunto">
+        </label>
+      </div>
+
+      <div class="filtros" aria-label="Filtrar catálogo">
+        <button type="button" class="ativo" data-categoria="Todas">Todas</button>
+        <button type="button" data-categoria="Infantil">Infantil</button>
+        <button type="button" data-categoria="Literatura jovem">Literatura jovem</button>
+        <button type="button" data-categoria="Literatura">Literatura</button>
+      </div>
+
+      <div id="livros" class="grade"></div>
+      <p id="erro-catalogo" hidden>Não foi possível carregar o catálogo.</p>
+    </section>
+
+    <section class="informacoes" id="como-receber">
+      <article>
+        <h2>Impressão sob demanda</h2>
+        <p>Os livros são impressos após a confirmação do pagamento. A produção requer até 15 dias antes da postagem.</p>
+      </article>
+
+      <article>
+        <h2>Acompanhe seu pedido</h2>
+        <p>O pagamento, a produção e o envio podem ser acompanhados na página do pedido.</p>
+      </article>
+
+      <article>
+        <h2>Frete</h2>
+        <p>O valor e o prazo estimado de transporte são apresentados antes da geração do Pix.</p>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="detalhes">
+    <button id="fechar" class="fechar" type="button" aria-label="Fechar">×</button>
+    <div id="conteudo-detalhes"></div>
+  </dialog>
+
+  <footer>
+    <strong>LAMAVEO</strong>
+    <p>Literatura, ciência e ideias em circulação.</p>
+    <p>Contato: editora@lamaveo.com.br</p>
+  </footer>
 </body>
 </html>
