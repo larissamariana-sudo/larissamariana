@@ -14,7 +14,7 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
-# Estilização profissional com fundo azul (#182746) e abas em destaque branco/negrito
+# Estilização profissional com abas altamente destacadas (texto branco, negrito e maior contraste)
 st.markdown(
     """
     <style>
@@ -46,31 +46,33 @@ st.markdown(
         margin-bottom: 25px;
     }
 
-    /* Estilização avançada das abas (Tabs) para garantir texto branco e negrito */
+    /* Estilização avançada das abas (Tabs) para máxima visibilidade */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
+        gap: 12px;
         background-color: transparent;
         border-bottom: 2px solid #30476b;
+        padding-bottom: 5px;
     }
     
     .stTabs [data-baseweb="tab"] {
         background-color: #24395e !important;
-        border: 1px solid #30476b !important;
-        border-radius: 6px 6px 0px 0px !important;
-        padding: 10px 20px;
+        border: 2px solid #4a6fa5 !important;
+        border-radius: 8px 8px 0px 0px !important;
+        padding: 12px 24px !important;
     }
 
-    /* Força absolutamente qualquer elemento de texto dentro das abas a ficar branco e em negrito */
+    /* Força o texto das abas a ficar em branco, grande, visível e em negrito */
     .stTabs [data-baseweb="tab"] p, 
     .stTabs [data-baseweb="tab"] span, 
     .stTabs [data-baseweb="tab"] div,
     .stTabs button[data-baseweb="tab"] * {
         color: #ffffff !important;
-        font-weight: 700 !important;
+        font-size: 16px !important;
+        font-weight: 800 !important;
         font-family: Inter, Arial, sans-serif !important;
     }
 
-    /* Aba selecionada com destaque coral LAMAVEO e texto escuro para contraste */
+    /* Aba selecionada com destaque coral vibrante LAMAVEO e texto escuro para alto contraste */
     .stTabs [aria-selected="true"] {
         background-color: #f39472 !important;
         border-color: #f39472 !important;
@@ -81,7 +83,8 @@ st.markdown(
     .stTabs [aria-selected="true"] div,
     .stTabs [aria-selected="true"] * {
         color: #182746 !important;
-        font-weight: 800 !important;
+        font-size: 16px !important;
+        font-weight: 900 !important;
     }
 
     /* Containers e Cards com contraste elegante para fundo azul */
