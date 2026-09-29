@@ -14,7 +14,7 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
-# Estilização profissional com fundo azul (#182746) e abas/textos ajustados
+# Estilização profissional com fundo azul (#182746) e abas em destaque branco/negrito
 st.markdown(
     """
     <style>
@@ -46,7 +46,7 @@ st.markdown(
         margin-bottom: 25px;
     }
 
-    /* Estilização moderna das abas (Tabs) com texto em negrito e branco */
+    /* Estilização avançada das abas (Tabs) para garantir texto branco e negrito */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
         background-color: transparent;
@@ -60,16 +60,17 @@ st.markdown(
         padding: 10px 20px;
     }
 
-    /* Força o texto de todas as abas em negrito e branco */
+    /* Força absolutamente qualquer elemento de texto dentro das abas a ficar branco e em negrito */
     .stTabs [data-baseweb="tab"] p, 
     .stTabs [data-baseweb="tab"] span, 
-    .stTabs [data-baseweb="tab"] div {
+    .stTabs [data-baseweb="tab"] div,
+    .stTabs button[data-baseweb="tab"] * {
         color: #ffffff !important;
-        font-weight: bold !important;
+        font-weight: 700 !important;
         font-family: Inter, Arial, sans-serif !important;
     }
 
-    /* Aba selecionada com destaque coral LAMAVEO */
+    /* Aba selecionada com destaque coral LAMAVEO e texto escuro para contraste */
     .stTabs [aria-selected="true"] {
         background-color: #f39472 !important;
         border-color: #f39472 !important;
@@ -77,8 +78,10 @@ st.markdown(
 
     .stTabs [aria-selected="true"] p, 
     .stTabs [aria-selected="true"] span, 
-    .stTabs [aria-selected="true"] div {
+    .stTabs [aria-selected="true"] div,
+    .stTabs [aria-selected="true"] * {
         color: #182746 !important;
+        font-weight: 800 !important;
     }
 
     /* Containers e Cards com contraste elegante para fundo azul */
