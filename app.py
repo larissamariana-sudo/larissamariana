@@ -14,18 +14,17 @@ URL_PLANILHA = (
 )
 URL_LATTES = "http://lattes.cnpq.br/1002411477807507"
 
-# Estilização profissional com abas altamente destacadas (texto branco, negrito e maior contraste)
+# Estilização profissional com fundo azul (#182746) e abas forçadas em branco e negrito
 st.markdown(
     """
     <style>
-    /* Força o fundo azul escuro em toda a aplicação */
+    /* Fundo azul escuro global */
     .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
         background-color: #182746 !important;
         color: #e0e6ee !important;
         font-family: Inter, Arial, sans-serif !important;
     }
     
-    /* Títulos em branco com fonte Georgia */
     h1, h2, h3 {
         color: #ffffff !important;
         font-family: Georgia, serif !important;
@@ -46,48 +45,51 @@ st.markdown(
         margin-bottom: 25px;
     }
 
-    /* Estilização avançada das abas (Tabs) para máxima visibilidade */
+    /* Container das abas */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 12px;
+        gap: 10px;
         background-color: transparent;
         border-bottom: 2px solid #30476b;
-        padding-bottom: 5px;
     }
     
+    /* Fundo padrão das abas inativas */
     .stTabs [data-baseweb="tab"] {
         background-color: #24395e !important;
-        border: 2px solid #4a6fa5 !important;
-        border-radius: 8px 8px 0px 0px !important;
-        padding: 12px 24px !important;
+        border: 1px solid #4a6fa5 !important;
+        border-radius: 6px 6px 0px 0px !important;
+        padding: 10px 20px !important;
     }
 
-    /* Força o texto das abas a ficar em branco, grande, visível e em negrito */
+    /* FORÇA BRANCO E NEGRITO EM TODOS OS TEXTOS DAS ABAS */
+    .stTabs [data-baseweb="tab"] *, 
     .stTabs [data-baseweb="tab"] p, 
     .stTabs [data-baseweb="tab"] span, 
     .stTabs [data-baseweb="tab"] div,
-    .stTabs button[data-baseweb="tab"] * {
+    button[data-baseweb="tab"] div p {
         color: #ffffff !important;
-        font-size: 16px !important;
         font-weight: 800 !important;
-        font-family: Inter, Arial, sans-serif !important;
+        font-size: 15px !important;
+        -webkit-text-fill-color: #ffffff !important;
     }
 
-    /* Aba selecionada com destaque coral vibrante LAMAVEO e texto escuro para alto contraste */
+    /* Aba selecionada com destaque coral LAMAVEO */
     .stTabs [aria-selected="true"] {
         background-color: #f39472 !important;
         border-color: #f39472 !important;
     }
 
+    /* Texto da aba selecionada (com contraste escuro para legibilidade) */
+    .stTabs [aria-selected="true"] *, 
     .stTabs [aria-selected="true"] p, 
     .stTabs [aria-selected="true"] span, 
     .stTabs [aria-selected="true"] div,
-    .stTabs [aria-selected="true"] * {
+    button[data-baseweb="tab"][aria-selected="true"] div p {
         color: #182746 !important;
-        font-size: 16px !important;
         font-weight: 900 !important;
+        -webkit-text-fill-color: #182746 !important;
     }
 
-    /* Containers e Cards com contraste elegante para fundo azul */
+    /* Cards e Containers */
     div[data-testid="stVerticalBlock"] div[data-testid="stContainer"] {
         background-color: #24395e !important;
         border: 1px solid #30476b !important;
@@ -97,7 +99,7 @@ st.markdown(
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    /* Botões personalizados com o tom coral LAMAVEO */
+    /* Botões */
     .stButton button, .stLinkButton a {
         background-color: #f39472 !important;
         color: #182746 !important;
